@@ -1,0 +1,264 @@
+body{
+    background-color: #d4d4d4;
+}
+header{
+    min-height: 80px;
+    background-color: rgb(114, 101, 60);
+}
+header nav{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    box-sizing: border-box;
+}
+
+header a:hover{
+    text-decoration: none;
+}
+header h2{
+    font-size: 48px;
+    font-family: 'Dancing Script', cursive;
+    color: rgb(212, 203, 203);
+}
+header .sign-div{
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+header .sign-div label{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+header .sign-div input{
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 8px;
+    height: 40px;
+    color: white;
+}
+::placeholder{
+    color: whitesmoke;
+}
+header .sign-div .btn{
+    background-color: steelblue;
+    border: 0px;
+    min-width: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+.dropdown-toggle{
+    color: white;
+}
+.admin-nav{
+    padding-right: 50px;
+    padding-bottom: 20px;
+}
+.categories-cards{
+    display: flex;
+    justify-content: space-between;
+    /* max-width: 810px; */
+    margin: auto;
+}
+.categories-cards .mb-3 {
+    padding: 50px 15px;
+    background-color: transparent;
+    border-radius: 0px;
+    margin: auto;
+    margin-bottom: 30px!important;
+}
+#carouselExampleIndicators{
+    width: 100%;
+}
+.hotel-card .card-body{
+    padding: 0px!important;
+    margin-top: 25px;
+}
+.carousel-inner img{
+    max-height: 300px;
+    object-fit: cover;
+}
+.categories-cards .left{
+    width: 20%;
+    background-color: rgb(133, 125, 100);
+}
+.categories-cards .right{
+    width: 20%;
+    background-color: rgb(133, 125, 100);
+}
+.midle{
+    width: 60%;
+    /* max-width: 810px; */
+}
+.registration-form{
+    width: 50%;
+    margin: 50px auto 0px;
+}
+.registration-form form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form .form-row{
+    justify-content: center;
+    width: 100%;
+}
+form .form-row input{
+    width: 100%;
+}
+.art{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 50px auto 0px;
+}
+.plus{
+    display:flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+.fa-plus-circle{
+    font-size: 25px;
+}
+.carousel-item img{
+    object-fit:cover;
+}
+.hotel-name{
+    display: flex;
+    flex-direction: column;
+}
+.art input{
+    background-color: transparent;
+    border: 1px groove black;
+}
+#image{
+    display: flex;
+    flex-direction: column;
+}
+.district{
+    width: 200px;
+}
+.district #inputState{
+    background-color: transparent;
+    border: 1px solid black;
+    width: 100%;
+}
+.admin-main .categories-cards{
+    min-height: 800px;
+}
+#navbarDropdown{
+    margin-right: 100px;
+}
+#navbarDropdown:hover{
+    color: white;
+}
+.hotel-id{
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+}
+.hotel-id div{
+    display: flex;
+    flex-direction: column;
+    width: 100%!important;
+    /* max-width: 280px; */
+}
+.hotel-id input{
+    height: 40px;
+}
+.hotel-id button{
+    max-width: 120px;
+    height: 40px;
+}
+.categories-search{
+    display: flex;
+    margin: 15px auto;
+    max-width: 700px;
+    justify-content: space-between;
+}
+.categories-search article{
+    display: flex;
+    width: 50%;
+    max-width: 405px;
+    min-height: 38px;
+}
+.categories-search article .search-bar input{
+    width: 100%;
+    height: 100%;
+}
+.categories-search article .search-bar{
+    width: 90%;
+}
+.categories-search article .search-icon{
+    background-color: cadetblue;
+}
+.categories-search article .search-icon a {
+    width: 35px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+.change-user-info{
+    width: 50%;
+    margin: 50px auto 0px;
+}
+.newPassword{
+    display: flex;
+    flex-direction: column;
+}
+footer {
+    background-color: rgb(50, 50, 50);
+}
+footer .footer-art{
+    width: 40%;
+    margin: auto;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer .footer-art div{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+footer h1{
+    font-size: 70px;
+    font-family: 'Dancing Script', cursive;
+    color: rgb(153, 139, 139);
+}
+footer h3{
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    color: rgb(153, 139, 139);
+}
+footer i{
+    font-size: 25px;
+    color: rgba(17, 126, 81, 0.527);
+
+}
+.card-news{
+    padding: 0px 10px;
+    margin: 10px 0px;
+    border-bottom: 1px dotted black;
+}
+.card-news img{
+    object-fit: cover;
+    width: 100%;
+}
+.displaynone{
+    display: none;
+}
+.marginauto{
+    margin: 85px auto;
+}
