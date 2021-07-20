@@ -200,13 +200,6 @@ function goToRegisterForm() {
   mail = "";
 }
 
-// $("#inputState")[0].addEventListener("click", function(){
-//   if($("#inputState")[0].value != "კატეგორიები"){
-
-//   }
-//   alert("gilocav")
-
-// })
 
 
 var filteredHotels;
@@ -309,11 +302,13 @@ function searchBar() {
 }
 
 
-$("#search-body").click(function(item){
-  if(loggedIn != true){
+$("#search-body").click(function (item) {
+  if (loggedIn != true) {
     swal("გთხოვთ გაიაროთ ავტორიზაცია")
   }
 })
+
+var timeouitIndex;
 
 function testGenerate(item) {
   middle.innerHTML = searchBar()
@@ -324,11 +319,16 @@ function testGenerate(item) {
       test5(i)
     }
     test155()
-    $("#search-body").click(function(item){
-      if(loggedIn != true){
+    $("#search-body").click(function (item) {
+      if (loggedIn != true) {
         swal("გთხოვთ გაიაროთ ავტორიზაცია")
       }
     })
+    if (item.length <= 5) {
+      timeouitIndex = 1
+    } else {
+      timeouitIndex = Math.round(item.length / 10)
+    }
   }, 1500);
   function test4(i) {
     setTimeout(() => {
@@ -352,65 +352,9 @@ function testGenerate(item) {
       var imgs = document.querySelectorAll(".carousel-inner")
       var childrens = imgs[i].children
       childrens[0].classList.add("active")
-    }, 2000 * Math.ceil(item.length / 10));
+    }, 2000 * timeouitIndex);
   }
 
-}
-
-
-function orderImages(item) {
-  for (var i = 0; i < item.length; i++) {
-    for (var j = 0; j < item.length - 1; j++) {
-      var testFirst = item[j].slice(0, 1)
-      var testSecond = item[j + 1].slice(0, 1)
-      if (testFirst > testSecond) {
-        var tmp = item[j]
-        item[j] = item[j + 1]
-        item[j + 1] = tmp
-      }
-    }
-  }
-}
-
-var testarrayofnow = []
-
-function test123124(hotelIds, hotelNAme, index, item) {
-  var starsRef = storageRef.child(`${hotelIds}/${hotelNAme[index]}`)
-  starsRef.getDownloadURL()
-    .then((url) => {
-      var tmpurl = item + url
-      testfunction(tmpurl)
-    })
-}
-
-
-function testfunction(item) {
-  testarrayofnow = new Array;
-  test12.push(item)
-  orderImages(test12)
-  for (var i = 0; i < test12.length; i++) {
-    var tmp = test12[i].slice(1, test12[i].length)
-    testarrayofnow.push(tmp)
-  }
-}
-
-
-function testForFilter(hotelIds, hotelNAme, index, item) {
-  var starsRef = storageRef.child(`${hotelIds}/${hotelNAme[index]}`)
-  starsRef.getDownloadURL()
-    .then((url) => {
-      var tmpurl = item + url
-      testfunction(tmpurl)
-    })
-}
-
-function testForSearch(hotelIds, hotelNAme, index, item) {
-  var starsRef = storageRef.child(`${hotelIds}/${hotelNAme[index]}`)
-  starsRef.getDownloadURL()
-    .then((url) => {
-      var tmpurl = item + url
-      testfunction(tmpurl)
-    })
 }
 
 
@@ -635,15 +579,14 @@ const xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 
 xhr.addEventListener("readystatechange", function () {
-	if (this.readyState === this.DONE) {
-        // console.log(JSON.parse(this.responseText));
-        var json = JSON.parse(this.responseText).value;
-        for(var i = 0; i < json.length; i ++){
-            left.innerHTML += getNewsCardHtml(json[i]);
-            right.innerHTML += getNewsCardHtml(json[i]);
-        }
-        console.log(json)
-	}
+  if (this.readyState === this.DONE) {
+    // console.log(JSON.parse(this.responseText));
+    var json = JSON.parse(this.responseText).value;
+    for (var i = 0; i < json.length; i++) {
+      left.innerHTML += getNewsCardHtml(json[i]);
+      right.innerHTML += getNewsCardHtml(json[i]);
+    }
+  }
 });
 
 xhr.open("GET", "https://bing-news-search1.p.rapidapi.com/news/trendingtopics?safeSearch=Off&textFormat=Raw");

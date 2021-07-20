@@ -120,7 +120,7 @@ function returnAllHotels() {
     location.href = "./admin.html"
 }
 
-
+var timeouitIndex;
 
 function generateAllHotels(item) {
     mainScreen.innerHTML = searchBar()
@@ -130,6 +130,11 @@ function generateAllHotels(item) {
             test4(i)
             test5(i)
         }
+        if (item.length <= 5) {
+            timeouitIndex = 1
+          } else {
+            timeouitIndex = Math.round(item.length / 10)
+          }
         test155()
         setTimeout(() => {
             forForTestBtns()
@@ -157,7 +162,7 @@ function generateAllHotels(item) {
             var imgs = document.querySelectorAll(".carousel-inner")
             var childrens = imgs[i].children
             childrens[0].classList.add("active")
-        }, 2000 * Math.ceil(item.length / 10));
+        }, 2000 * timeouitIndex);
     }
 
 }
@@ -786,7 +791,6 @@ xhr.addEventListener("readystatechange", function () {
             left.innerHTML += getNewsCardHtml(json[i]);
             right.innerHTML += getNewsCardHtml(json[i]);
         }
-        console.log(json)
 	}
 });
 
