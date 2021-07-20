@@ -85,14 +85,14 @@ function book() {
 }
 
 var firebaseConfig = {
-  apiKey: "AIzaSyAmwgxNT9sJz1D4S-BXpG7KHoVRjFZa9CM",
-  authDomain: "booking-hotels-70e97.firebaseapp.com",
-  databaseURL: "https://booking-hotels-70e97-default-rtdb.firebaseio.com",
-  projectId: "booking-hotels-70e97",
-  storageBucket: "booking-hotels-70e97.appspot.com",
-  messagingSenderId: "1060562286818",
-  appId: "1:1060562286818:web:855b1071278fb9d2ccc6bb",
-  measurementId: "G-4V00LMDCXQ"
+  apiKey: "AIzaSyDwC6pgr9tBF53ZQuzDG8qEE2XybELlpRo",
+  authDomain: "booking-hotels2.firebaseapp.com",
+  databaseURL: "https://booking-hotels2-default-rtdb.firebaseio.com/",
+  projectId: "booking-hotels2",
+  storageBucket: "booking-hotels2.appspot.com",
+  messagingSenderId: "552751872131",
+  appId: "1:552751872131:web:0a6b3e652a64183fb6c3b6",
+  measurementId: "G-PM9QPCB4RW"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -312,6 +312,11 @@ var timeouitIndex;
 
 function testGenerate(item) {
   middle.innerHTML = searchBar()
+  if (item.length <= 5) {
+    timeouitIndex = 1
+  } else {
+    timeouitIndex = Math.round(item.length / 10)
+  }
   setTimeout(() => {
     for (var i = 0; i < item.length; i++) {
       $("#hotelGenerate")[0].innerHTML += fullCard(i + 1)
@@ -324,11 +329,6 @@ function testGenerate(item) {
         swal("გთხოვთ გაიაროთ ავტორიზაცია")
       }
     })
-    if (item.length <= 5) {
-      timeouitIndex = 1
-    } else {
-      timeouitIndex = Math.round(item.length / 10)
-    }
   }, 1500);
   function test4(i) {
     setTimeout(() => {
