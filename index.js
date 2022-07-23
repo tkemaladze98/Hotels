@@ -379,7 +379,7 @@ $(".log-in")[0].addEventListener("click", function () {
         loggedIn = true;
         $("#deactivate").click(function () {
           firebase.database().ref('users/' + currentUser[0]).remove();
-          location.href = "./user.html"
+          location.href = "./index.html"
         })
         $("#change-info").click(function () {
           middle.innerHTML = changeInfoScreen();
@@ -459,7 +459,7 @@ function returnLoggedInMain() {
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" id="change-info" type="button">ინფორმაციის რედაქტიირება</a>
           <a class="dropdown-item" id="deactivate" type="button">პროფილის წაშლა</a>
-          <a class="dropdown-item" href="./user.html">გამოსვლა</a>
+          <a class="dropdown-item" href="./index.html">გამოსვლა</a>
         </div>
       </li>
     </ul>

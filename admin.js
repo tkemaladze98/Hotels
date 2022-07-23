@@ -313,7 +313,7 @@ $(".change-info").click(function () {
 
 $("#deactivate").click(function () {
     firebase.database().ref('users/' + currentUser[0]).remove();
-    location.href = "./user.html"
+    location.href = "./index.html"
 })
 
 function clickToGenerateId() {
